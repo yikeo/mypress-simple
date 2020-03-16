@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikeo.mypress.modules.example.mapper.ExampleMapper" >
+
+    <insert id="save" parameterType="com.yikeo.mypress.modules.example.entity.Example">
+		insert into t_example(name) values(#{name,jdbcType=VARCHAR})
+	</insert>
+
+    <select id="selectById" resultType="com.yikeo.mypress.modules.example.entity.Example">
+		select * from t_example where id = #{id,jdbcType=NUMERIC}
+	</select>
+
+    <update id="updateById" parameterType="com.yikeo.mypress.modules.example.entity.Example">
+		update t_example set  
+		name = #{name,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=NUMERIC}
+	</update>
+
+    <delete id="deleteById">
+		delete from t_example where id = #{id,jdbcType=NUMERIC}
+	</delete>
+
+    <select id="queryAll" resultType="com.yikeo.mypress.modules.example.entity.Example">
+		select * from t_example
+	</select>
+
+</mapper>

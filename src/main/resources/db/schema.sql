@@ -1,0 +1,1 @@
+create table t_example(id bigint auto_increment PRIMARY KEY, name varchar(255));
